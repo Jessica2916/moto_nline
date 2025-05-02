@@ -1,0 +1,177 @@
+/*Reset básico*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+/*Variáveis globais*/
+:root{
+    --bg-color: #0a0a0a;
+    --container-bg: #111;
+    --input-bg: #1c1c1c;
+    --text-color: #f1f1f1;
+    --label-color: #ccc;
+    --neon-blue: #00ffff;
+    --neon-pink: #ff00ff;
+    --danger: #ff7070;
+    --hover-brightness: 1.2;
+    --radius: 8px;
+    --font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* altura total da tela */
+    background-color: var(--bg-color);
+}  
+
+/*Container principal*/
+.container{
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/*Logo*/
+.logo img{
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/*Título*/
+h1{
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--text-color);
+}
+h1 .neon{
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+label{
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: var(--label-color);
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input::placeholder{
+    color: #888;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+    border: none;
+    border-radius: var(--radius);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    filter: brightness(var(--hover-brightness));
+}
+
+.hidden{
+    display: none;
+}
+
+#forgot{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+button#sair{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button#sair:hover{
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+#forgot{
+    color: #00bfff;
+    text-decoration: underline;
+}
+
+#forgotSenha{
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+#mensagem {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-link{
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--label-color);
+}
+
+.login-link a{
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-link a:hover{
+    color: var(--neon-pink);
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
